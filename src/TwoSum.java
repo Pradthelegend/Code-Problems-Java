@@ -15,6 +15,7 @@ Output: [0,1]
 Explanation: nums[0] + nums[1] == 7, so we return [0, 1].
  */
 
+import java.lang.runtime.SwitchBootstraps;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -50,51 +51,20 @@ public class TwoSum {
 
         System.out.println(lst);
 
-//        for (int i=0;i<nums.length;i++) {
-//            for(int j=0;j<nums.length;j++){
-//                if (nums[i] + nums[j + 1] == target) {
-//                    System.out.println(nums[i] + " " + nums[j]);
-//                }
-//            }
-//        }
-
+        boolean found = false;
+        outer: // This is called a labeled break; Used to completely exit a nested loop.
         for (int i=0;i<nums.length;i++) {
             for(int j : nums){
                 if(nums[i]+j==target && nums[i] !=j){
-                    System.out.println("[" + lst.indexOf(nums[i]) + " " + lst.indexOf(j) + "]");
+                    System.out.println("[" + lst.indexOf(nums[i]) + " " + lst.indexOf(j) + "] " + "The 'target' value is : " + target );
+                    found=true;
+                    break outer;
                 }
-                 break;
             }
         }
 
-
-
-//        Predicate<Integer> p1 = new Predicate<Integer>() {
-//            @Override
-//            public boolean test(Integer integer) {
-//                for (int i=0;i<nums.length;i++){
-//                    if(nums[i] + nums[i+1]==target){
-//                        System.out.println(nums[i] + " "+ nums[i+1]);
-//                    }else {
-//                        System.out.println("No Match");
-//                    }
-//                }
-//                return false;
-//            }
-//        };
-//
-//        int result = lst.stream()
-//                .filter(p1)
-//                .reduce(0,(c,e) -> {
-//                    if(c+e==target){
-//                        return lst.indexOf(c);
-//
-//                    }
-//                    return 1;
-//                });
-//
-//
-//        System.out.println("Result " + result);
-
+        if(found==false){
+            System.out.println("No Match found");
+        }
     }
 }
