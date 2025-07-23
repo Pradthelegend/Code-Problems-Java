@@ -17,9 +17,9 @@ public class ValidPalindrome {
 
     public static boolean isPalindrome(String inputString){
         String originalString = inputString;
-        System.out.println(originalString);
+//        System.out.println(originalString);
         String correctedString = originalString.replaceAll("[^a-zA-Z0-9]", "");
-        System.out.println(correctedString);
+//        System.out.println(correctedString);
         char[] reverseOperation = correctedString.toCharArray();
 
 //        List<Character> lst = new ArrayList<>();
@@ -28,12 +28,11 @@ public class ValidPalindrome {
 //         }
 
         char[] ch= new char[correctedString.length()];
-        for(int i=0;i<correctedString.length();i++){
-            for(int j=reverseOperation.length -1;j>=0;j--){
-                ch[i]=reverseOperation[j];
-                break;
-            }
+
+        for(int i=reverseOperation.length -1;i>=0;i--){
+            ch[i]=reverseOperation[i];
         }
+
 
         System.out.println(ch);
 //        String str = new String(lst);
