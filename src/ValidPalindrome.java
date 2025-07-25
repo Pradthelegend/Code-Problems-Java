@@ -17,24 +17,56 @@ public class ValidPalindrome {
 
     public static boolean isPalindrome(String inputString){
         String originalString = inputString;
-//        System.out.println(originalString);
+        System.out.println(originalString);
         String correctedString = originalString.replaceAll("[^a-zA-Z0-9]", "");
 //        System.out.println(correctedString);
         char[] reverseOperation = correctedString.toCharArray();
 
-//        List<Character> lst = new ArrayList<>();
-//        for(int i=reverseOperation.length -1;i>=0;i--){
-//            lst.add(reverseOperation[i]);
-//         }
-
-        char[] ch= new char[correctedString.length()];
-
-        for(int i=reverseOperation.length -1;i>=0;i--){
-            ch[i]=reverseOperation[i];
+        List<Character> beforeReverseOperation = new ArrayList<>();
+        for (char c : reverseOperation){
+            beforeReverseOperation.add(c);
         }
 
 
-        System.out.println(ch);
+        List<Character> lst = new ArrayList<>();
+        for(int i=reverseOperation.length -1;i>=0;i--){
+            lst.add(reverseOperation[i]);
+         }
+
+//        char[] ch= new char[correctedString.length()];
+//
+//
+//            for (char c1 : reverseOperation) {
+//                for(int i=reverseOperation.length -1;i>=0;i--){
+//                ch[i] = c1;
+//                break;
+//            }
+//        }
+
+//        System.out.println(ch);
+        System.out.println(beforeReverseOperation);
+        System.out.println(lst);
+
+//         for( Character c0 : beforeReverseOperation) {
+//             for (int i = reverseOperation.length - 1; i >= 0; i--) {
+//                 if(c0.equals(lst[i])){
+//
+//                 }
+//             }
+//         }
+
+
+//        for(int i=0;i<correctedString.length();i++){
+//            if
+//        }
+
+//        for(Character c : reverseOperation){
+//            for(int i=reverseOperation.length -1;i>=0;i--){
+//                if(c.equals(lst[i])){
+//
+//                }
+//            }
+//        }
 //        String str = new String(lst);
 
 
