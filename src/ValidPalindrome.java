@@ -18,7 +18,7 @@ public class ValidPalindrome {
     public static boolean isPalindrome(String inputString){
         String originalString = inputString.toUpperCase();
         System.out.println(originalString);
-        String correctedString = originalString.replaceAll("[^a-zA-Z0-9]", "").toUpperCase();
+        String correctedString = originalString.replaceAll("[^a-zA-Z0-9]", "").toUpperCase();//"^" this is a not operator.
 //        System.out.println(correctedString);
         char[] reverseOperation = correctedString.toCharArray();
 
@@ -27,22 +27,19 @@ public class ValidPalindrome {
             beforeReverseOperation.add(c);
         }
 
-
-        List<Character> lst = new ArrayList<>();
+        List<Character> afterReverseOperation = new ArrayList<>();
         for(int i=reverseOperation.length -1;i>=0;i--){
-            lst.add(reverseOperation[i]);
+             afterReverseOperation.add(reverseOperation[i]);
          }
 
-
-
-         System.out.println(beforeReverseOperation);
-        System.out.println(lst);
+        System.out.println(beforeReverseOperation);
+        System.out.println(afterReverseOperation);
 
 //        boolean status=true;
 //        Break: //This is a labeled break.
 //        for(int i=reverseOperation.length -1;i>=0;i--){
 //            for(int j=reverseOperation.length -1;j>=0;j--){
-//                if(beforeReverseOperation.get(i).equals(lst.get(j))){
+//                if(beforeReverseOperation.get(i).equals(afterReverseOperation.get(j))){
 //                    status = true;
 //                }else {
 //                    status = false;
@@ -50,22 +47,20 @@ public class ValidPalindrome {
 //                }
 //            }
 //        }
+
         boolean status = true;
         for (int i = 0; i < beforeReverseOperation.size(); i++) {
-            if (!beforeReverseOperation.get(i).equals(lst.get(i))) {
+            if (!beforeReverseOperation.get(i).equals(afterReverseOperation.get(i))) {
                 status = false;
                 break;
             }
         }
-
-
         return status;
     }
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        String input = sc.next();
-//        ValidPalindrome.isPalindrome("Interview!@Kickstart23");
+        String input = sc.nextLine();
         System.out.println(ValidPalindrome.isPalindrome(input));
 
     }
