@@ -38,20 +38,28 @@ public class ValidPalindrome {
          System.out.println(beforeReverseOperation);
         System.out.println(lst);
 
-        boolean status=true;
-        Break: //This is a labeled break.
-        for(int i=reverseOperation.length -1;i>=0;i--){
-            for(int j=reverseOperation.length -1;j>=0;j--){
-                if(beforeReverseOperation.get(i)==lst.get(j)){
-                    status = true;
-                }else {
-                    status = false;
-                    break Break;
-                }
+//        boolean status=true;
+//        Break: //This is a labeled break.
+//        for(int i=reverseOperation.length -1;i>=0;i--){
+//            for(int j=reverseOperation.length -1;j>=0;j--){
+//                if(beforeReverseOperation.get(i).equals(lst.get(j))){
+//                    status = true;
+//                }else {
+//                    status = false;
+//                    break Break;
+//                }
+//            }
+//        }
+        boolean status = true;
+        for (int i = 0; i < beforeReverseOperation.size(); i++) {
+            if (!beforeReverseOperation.get(i).equals(lst.get(i))) {
+                status = false;
+                break;
             }
         }
 
-         return status;
+
+        return status;
     }
     public static void main(String[] args) {
 
