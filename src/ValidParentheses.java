@@ -52,11 +52,12 @@ public class ValidParentheses {
                         (c == '}' && top == '{')) {
                     stack.pop(); // matched, remove from stack
                 } else {
+                    // Mismatch → invalid string
                     return false; // mismatch
                 }
             }
         }
-
+        // If stack is empty → all brackets were matched correctly
         return stack.isEmpty();
 
     }
