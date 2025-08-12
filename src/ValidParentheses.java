@@ -36,39 +36,6 @@ public class ValidParentheses {
 
     public static boolean isValid(String inputString) {
 
-//         String originalString = inputString;
-////        if(originalString.contains("[a-zA-Z0-9]")){
-////            return status;
-////        }
-//        String correctedString = originalString.replaceAll("[a-zA-Z0-9]","");
-//        char[] originalToChar = correctedString.toCharArray();
-//
-//        List<Character> orignalLst = new ArrayList<>();
-//        for (char c : originalToChar){
-//            orignalLst.add(c);
-//        }
-//        System.out.println(orignalLst);
-//
-//        List<Character> reverseLst = new ArrayList<>();
-//
-//        for(int i=originalToChar.length -1;i>=0;i--){
-//            reverseLst.add(originalToChar[i]);
-//        }
-//
-//        System.out.println(reverseLst);
-//
-//        boolean status = false;
-//        for(int i=0;i<correctedString.length();i++){
-//            for(int j = originalToChar.length -1; j>=0; j--){
-//                if (orignalLst.get(i).equals(reverseLst.get(j))){
-//                    status = true;
-//                }
-//            }
-//        }
-//
-//
-//        return status;
-
         Stack<Character> stack = new Stack<>();
 
         for(char c : inputString.toCharArray()){
@@ -78,15 +45,28 @@ public class ValidParentheses {
                 if(stack.isEmpty()){
                     return false;
                 }
+
+                char top = stack.peek();
+                if ((c == ')' && top == '(') ||
+                        (c == ']' && top == '[') ||
+                        (c == '}' && top == '{')) {
+                    stack.pop(); // matched, remove from stack
+                } else {
+                    return false; // mismatch
+                }
             }
         }
 
-        return true;
+        return stack.isEmpty();
 
     }
 
     public static void main(String[] args) {
 
-        System.out.println(ValidParentheses.isValid("[({})]"));
+        System.out.println(isValid("[]"));        // true
+        System.out.println(isValid("([{}])"));    // true
+        System.out.println(isValid("[(])"));      // false
+        System.out.println(isValid("[({})]"));    // true
+
     }
 }
