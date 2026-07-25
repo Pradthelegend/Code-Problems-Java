@@ -1,3 +1,5 @@
+package randoms;
+
 import java.util.Arrays;
 
 public class ValidAnagrams {

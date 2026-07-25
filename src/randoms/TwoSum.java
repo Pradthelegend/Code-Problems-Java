@@ -1,4 +1,4 @@
-/*
+package randoms;/*
 Two Sum
 Given an array of integers nums and an integer target, return the indices i and j such that nums[i] + nums[j] == target and i != j.
 
@@ -15,14 +15,9 @@ Output: [0,1]
 Explanation: nums[0] + nums[1] == 7, so we return [0, 1].
  */
 
-import java.lang.runtime.SwitchBootstraps;
-import java.net.Socket;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
-import java.util.function.Predicate;
-import java.util.stream.Stream;
 
 public class TwoSum {
 

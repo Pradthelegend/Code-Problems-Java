@@ -1,4 +1,4 @@
-/*
+package randoms;/*
 You are given a string s consisting of the following characters: '(', ')', '{', '}', '[' and ']'.
 
 The input string s is valid if and only if:
@@ -28,8 +28,6 @@ Explanation: The brackets are not closed in the correct order.
 
  */
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Stack;
 
 public class ValidParentheses {

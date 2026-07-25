@@ -1,7 +1,8 @@
+package randoms;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.util.stream.Stream;
 
 /*
 Given a string s, return true if it is a palindrome, otherwise return false.
